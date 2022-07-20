@@ -8,9 +8,8 @@ Parameters:
 
 All parameters must be in "double quotes"'''
 
-import os
+from os import getcwd
 from requests import post
-from requests.structures import CaseInsensitiveDict
 from json import loads
 from PIL import Image
 from io import BytesIO
@@ -43,7 +42,7 @@ elif len(arguments) > 1 and len(arguments) < 4:
 
     if directory[1] != ':': # Directory is not from main drive folder
         print(Fore.YELLOW + 'Directory is not from main drive folder, using current directory')
-        directory = os.getcwd() + '\\' + directory
+        directory = getcwd() + '\\' + directory
 
     print(Fore.GREEN + 'Prompt: ' + Fore.WHITE + prompt)
     print(Fore.GREEN + 'Directory: ' + Fore.WHITE + directory)
